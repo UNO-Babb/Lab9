@@ -1,7 +1,8 @@
 # Lab 9 - CYBR 2980
 
 ## Steganography
-[Introduction Video](https://use.vg/4xN4YE)
+[Introduction Video](https://use.vg/4xN4YE)  
+
 Steganography is a method for concealing information within seemingly innocent media. The true craft comes from sending the information in a manner so that only the sender and the intended recipient realize its existence. Steganography may be as simple as altering the language of a message. It can also involve using a ""container", such as a jpg image, to carry a "cargo" of data, such as a text file. However the message is concealed, the art is in hiding the data in plain sight so as to hide its true intention. With steganography, seemingly unaltered images, video files, sound files, and even blank disc space can all inconspicuously carry extra data.
 
 #### Example Techniques of Steganography
@@ -25,7 +26,8 @@ This type of precondition is a state that we expect for all values coming in. We
 - How can we calculate a binary value in an algorithm?
 - How do we ensure that the result is 8-bits, even if the number doesn't need that many bits?
 
-[Video Demonstration of Function](https://use.vg/9k1bEW)
+[Video Demonstration of Function](https://use.vg/9k1bEW)  
+
 
 **binaryToNumber(binaryString)**
 This function will take a binary string and return a base 10 number.
@@ -43,8 +45,10 @@ This function will take an image and a message as parameters. We will then conve
 
 When we have encoded the message in the image, we should save this new image to be loaded later.
 
-[Video Demonstration - Part 1](https://use.vg/kEz3P5)
-[Video Demonstration - Part 2](https://use.vg/vDKePo)
+[Video Demonstration - Part 1](https://use.vg/kEz3P5)  
+[Video Demonstration - Part 2](https://use.vg/vDKePo)  
+
+
 **decode(img)**
 This function will take an image as parameter. This image has been encoded with a secret message using the technique that we have created in our encode function.
 - Read the length of the encoded message.

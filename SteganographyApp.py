@@ -10,50 +10,6 @@ def encode(img, msg):
     #Then we will adjust the pixels to encode the message binary value into the last bit.
     #Each letter will take three pixels, with a spare pixel unchanged.
 
-    pixels = img.load() #Pixels is the pixel map, a 2-dimensional list of pixel data
-    width, height = img.size
-    letterSpot = 0
-    pixel = 0
-    letterBinary = ""
-    msgLength = len(msg)
-    red,green,blue = pixels[0,0]
-    pixels[0,0] = (msgLength, green, blue)
-
-    for i in range(msgLength * 3):
-        x = i % width
-        y = i // width
-        red,green,blue = pixels[x,y]
-        redBinary = numberToBinary(red)
-        greenBinary = numberToBinary(green)
-        blueBinary = numberToBinary(blue)
-
-        if pixel % 3 == 0:
-            letterBinary = numberToBinary(ord(msg[letterSpot]))
-            #no red because we use it for msg length in the first spot
-            greenBinary = greenBinary[0:7] + letterBinary[0]
-            blueBinary = blueBinary[0:7] + letterBinary[1]
-
-        elif pixel % 3 == 1:
-            redBinary = redBinary[0:7] + letterBinary[2]
-            greenBinary = greenBinary[0:7] + letterBinary[3]
-            blueBinary = blueBinary[0:7] + letterBinary[4]
-
-        else:
-            redBinary = redBinary[0:7] + letterBinary[5]
-            greenBinary = greenBinary[0:7] + letterBinary[6]
-            blueBinary = blueBinary[0:7] + letterBinary[7]
-
-            letterSpot += 1
-
-        red = binaryToNumber(redBinary)
-        green = binaryToNumber(greenBinary)
-        blue = binaryToNumber(blueBinary)
-
-        pixels[x,y] = (red, green, blue)
-        pixel += 1
-
-
-
 
     #Save the file that has now been encoded.
     img.save("secretImg.png", 'png')
@@ -102,13 +58,6 @@ def numberToBinary(num):
     """Takes a base10 number and converts to a binary string with 8 bits"""
     binary = ""
     #Convert from decimal to binary
-    while(num > 0):
-        binary = str(num % 2) + binary
-        num = num // 2
-
-    #Ensure that the binary number has 8 digits
-    while len(binary) < 8:
-        binary = "0" + binary
 
     return binary
 
@@ -129,21 +78,15 @@ def binaryToNumber(bin):
 
 def main():
     #Ask user if they want to encode/decode
-    """
-    for i in range(256):
-        bin = numberToBinary(i)
-        dec = binaryToNumber(bin)
-        print (i, bin, dec)
-    """
+
     myImg = Image.open('pki.png')
-    encode(myImg, "This is a super fun thing to do.")
+    myMsg = "This is a secret message I will hide in an image."
+    encode(myImg, myMsg)
     myImg.close()
 
-    yourImg = Image.open('secretImg.png')
-    msg = decode(yourImg)
-
-    print(len(msg))
-    print(msg)
+    #yourImg = Image.open('secretImg.png')
+    #msg = decode(yourImg)
+    #print(msg)
 
 if __name__ == '__main__':
     main()

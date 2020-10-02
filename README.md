@@ -63,3 +63,6 @@ The main function should drive the rest of the application.
 - Prompt for the image that will be opened.
 - If encoding, prompt for a message to encode.
 - If decoding, display the decoded message.
+
+## End of class
+In Repl.it, you will find the share link to your code. That is what gets submitted to Canvas.

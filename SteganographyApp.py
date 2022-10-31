@@ -104,22 +104,22 @@ def numberToBinary(num):
 def binaryToNumber(bin):
     """Takes a string binary value and converts it to a base10 integer."""
     decimal = 0
-    
+
 
     return decimal
 
 def main():
     #Ask user if they want to encode/decode
-    """
     myImg = Image.open('pki.png')
     myMsg = "This is a secret message I will hide in an image."
     encode(myImg, myMsg)
     myImg.close()
-    """
 
+    """
     yourImg = Image.open('secretImg.png')
     msg = decode(yourImg)
     print(msg)
-
+    """
+    
 if __name__ == '__main__':
     main()

@@ -1,0 +1,3 @@
+import SteganographyApp
+
+SteganographyApp.main()

@@ -59,4 +59,7 @@ The main function should drive the rest of the application.
 - If decoding, display the decoded message.
 
 ## End of class
-In Repl.it, you will find the share link to your code. That is what gets submitted to Canvas.
+- Add a commit message
+- Commit to GitHub
+- Sync work with Repo
+- Submit your repo link to Canvas
